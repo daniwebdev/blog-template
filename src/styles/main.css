@@ -173,7 +173,7 @@ aside h2 {
 /* ================================== */
 
 content article {
-  @apply bg-white p-4 mb-4;
+  @apply bg-white mb-4;
 }
 
 article {
@@ -447,3 +447,5 @@ footer li {
 .full-menu.show {
   display: flex;
 }
+/* ----------------------------------------- */
+

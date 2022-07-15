@@ -10,7 +10,32 @@
             Update Terbaru
         </h2>
 
-        @@for (var i = 0; i < 10; i++) {
+        @@for (var i = 0; i < 5; i++) {
+
+            <article class="border rounded-lg flex">
+                <div class="content-image flex w-56 bottom-0 rounded-l-lg" style="background: url(https://source.unsplash.com/random/300×300?trading,technology&keyu=`+i+`); background-size: cover;">
+
+                </div>
+                <div class="p-4 flex-1">
+                    <div class="content-header">
+                        <a href="./single.html">
+                            <h3 class="text-xl font-bold">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                            </h3>
+                        </a>
+                        <div class="py-2 date text-gray-700 dark:text-gray-400">
+                            Last update at December 2th, 2022
+                        </div>
+                    </div>
+                    <p class="text-justify">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                    </p>
+                </div>
+            </article>
+        }
+
+        @@for (var i = 0; i < 5; i++) {
+
             <article class="border p-5 rounded-lg">
                 <div class="content-header">
                     <a href="./single.html">
