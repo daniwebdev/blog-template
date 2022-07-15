@@ -13,7 +13,7 @@
         @@for (var i = 0; i < 5; i++) {
 
             <article class="border rounded-lg flex">
-                <div class="content-image flex w-56 bottom-0 rounded-l-lg" style="background: url(https://source.unsplash.com/random/300×300?trading,technology&keyu=`+i+`); background-size: cover;">
+                <div class="content-image hidden  md:flex w-56  bottom-0 rounded-l-lg" style="background: url(https://source.unsplash.com/random/300×300?trading,technology&keyu=`+i+`); background-size: cover;">
 
                 </div>
                 <div class="p-4 flex-1">
@@ -54,7 +54,16 @@
             </article>
         }
 
+
+        <div class="pagination">
+            <ul class="pagination">
+                <li class="page-item active"> <span aria-current="page" class="page-link current">1</span></li>
+                <li class="page-item"> <a class="page-link" href="https://dani.work/blog/page/2/">2</a></li>
+                <li class="page-item"> <a class="next page-link" href="https://dani.work/blog/page/2/">Next »</a></li>
+            </ul>
+        </div>
     </content>
+    
 
     @@include('./_inc/sidebar.html')
 
