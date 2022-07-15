@@ -1,0 +1,73 @@
+<h2>Pengantar</h2>
+<p>Saat ini hampir semua bahasa pemrograman yang populer mempunya <em>package manager</em> untuk mengelola library
+    di ruang lingkup bahasa pemrograman itu sendiri.</p>
+<p>Composer merupakan <em>package manager</em> untuk bahasa pemrograman PHP, saat artikel ini ditulis versi terbaru
+    dari composer adalah <a href="https://github.com/composer/composer/tree/2.3.8"><strong>versi</strong>
+        <strong>2.3.8</strong></a> , di artikel ini kita akan membahas <strong>cara install package manager composer
+        terbaru di linux</strong>.</p>
+<h2>Persiapan</h2>
+<ul>
+    <li>Koneksi Internet</li>
+    <li>PHP CLI versi 7 , direkomendasikan menggunakan versi terbaru</li>
+</ul>
+<h2>Cara Install Package Manager Composer</h2>
+<p>Cara ini mungkin bisa dilakukan juga untuk versi yang lebih tinggi dari saat ini, atau mungkin tidak akan jauh
+    berbeda.</p>
+<h3>Membaca dokumentasi resmi</h3>
+<p><strong>Pro tips: </strong>Biasakan jika kita mau mempelajari atau mau mencari tahu mengenai <em>tools</em>,
+    <em>software</em>, bahasa pemrograman, dll. sebelum bertanya kemana-mana sebaiknya terlebih dahulu buka
+    dokumentasi dari official websitenya, biasanya disana sudah ada informasi yang cukup lengkap.
+</p>
+<p>Buka website composer di <a href="https://getcomposer.org/" target="_blank"
+        rel="noreferrer noopener nofollow">https://getcomposer.org</a> lalu masuk ke halaman <a
+        href="https://getcomposer.org/download/" target="_blank"
+        rel="noreferrer noopener nofollow"><em>Download</em></a> , dihalaman tersebut terdapat cara untuk
+    mendapatkan composer di perangkat kita, dan kita akan bahas langkah-langkah tersebut sekarang.</p>
+<h3>Download Installer</h3>
+<p>dibaris pertama kita akan diarahkan untuk men-download installer menggunakan perintah php-cli dengan cara :</p>
+<pre class="wp-block-code language-bash"
+    tabindex="0"><code lang="bash" class="language-bash">$ php -r <span class="token string">"copy('https://getcomposer.org/installer', 'composer-setup.php');"</span></code></pre>
+<p>Ketika perintah tersebut dijalankan maka kita akan mendapatkan satu file bernama ‘composer-setup.php’, file
+    tersebut merupakan installer untuk composer.</p>
+<h3>Memvalidasi File Installer</h3>
+<p>Untuk memastikan bahwa file yang kita <em>download</em> itu tidak bermasalah <em>(corrupt)</em> dan tidak
+    disusupi virus, kita dianjurkan untuk memvalidasinya dengan metode hashing, caranya sebagai berikut :</p>
+<pre class="wp-block-code language-bash"
+    tabindex="0"><code lang="bash" class="language-bash">$ php -r <span class="token string">"if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"</span></code></pre>
+<h3>Mulai Install Composer</h3>
+<p>Selanjutnya jalankan file installer yang sudah di <em>download</em> tadi, dengan menggunakan perintah sebagai
+    berikut:</p>
+<pre class="wp-block-code language-bash"
+    tabindex="0"><code lang="bash" class="language-bash">$ php composer-setup.php</code></pre>
+<p>Tunggu beberapa saat sampai proses instalasi selesai, dan setelah selesai kita akan mendapatkan satu file baru
+    bernama <strong>composer.phar</strong> file tersebut merupakan file yang digunakan untuk menajalankan
+    <em><strong>composer</strong></em>.
+</p>
+<p>untuk memastikan sudah berjalan dengan baik, kita coba cek versi composernya dengan cara :</p>
+<pre class="wp-block-code language-bash"
+    tabindex="0"><code lang="bash" class="language-bash">$ php composer.phar -v</code></pre>
+<p><em>output</em> nya akan menampilkan versi dari composer itu sendiri, dan perintah tersbut hanya bisa dijalankan
+    dimana file <em>composer.phar</em> itu berada.</p>
+<p>Lalu bagaimana jika kita mau menjalankan perintah composer dimana saja tergantung project php kita berada. maka
+    kita perlu memindahkan file composer.phar tadi ke lokasi yang sudah terdaftar di <em>PATH variable, </em> maka
+    kita perlu memindahkan file tersebut ke <em>‘/usr/local/bin’</em> karena lokasi tersebut sudah terdaftar di PATH
+    variable jadi setiap file binary yang ada di dalam folder tersbut bisa kita jalankan di mana saja.</p>
+<p>Untuk memindahkannya lakukan dengan perintah sebagai berikut :</p>
+<pre class="wp-block-code language-bash"
+    tabindex="0"><code lang="bash" class="language-bash">$ <span class="token function">mv</span> composer.phar /usr/local/bin/composer</code></pre>
+<p>Setelah itu harusnya composer sudah bisa dijalankan secara global, dengan perintah :</p>
+<pre class="wp-block-code"><code class="">$ composer
+                    $ composer -v</code></pre>
+<h2>Kesimpulan</h2>
+<p>Composer dapat membantu kita untuk memasang banyak package / library PHP yang ada di <a href="https://packagist.org/"
+        target="_blank" rel="noreferrer noopener nofollow">https://packagist.org/</a>
+    maupun di repository git.</p>
+<p>Sekian dan terimakasih.</p>
+<div class="post-tags">
+    <ul>
+        <li><a href="https://dani.work/blog/tag/laravel/">Laravel</a></li>
+        <li><a href="https://dani.work/blog/tag/pacakge-manager/">pacakge manager</a></li>
+        <li><a href="https://dani.work/blog/tag/php/">php</a></li>
+        <li><a href="https://dani.work/blog/tag/programming/">programming</a></li>
+    </ul>
+</div>

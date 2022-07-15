@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="description" content="Elit laboris officia laborum do aliquip minim cillum do velit velit amet incididunt.">
+</head>
+<body class="relative">
+
+<div class="full-menu fixed right-0 left-0 flex items-center justify-center h-full top-0 bottom-0 bg-gray-900" style="z-index: 999999">
+    <ul>
+        <li class="menu-item"><a href="/">Home</a></li>
+        <li class="menu-item"><a href="/programming">Programming</a></li>
+        <li id="menu-item-169"
+            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-169">
+            <a href="https://dani.work/blog/category/programming/">Category</a>
+            <ul class="sub-menu">
+                <li id="menu-item-172" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-172"><a
+                        href="https://dani.work/blog/category/programming/php/">PHP</a></li>
+                <li id="menu-item-170" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-170"><a
+                        href="https://dani.work/blog/category/programming/android/">Android</a></li>
+                <li id="menu-item-171" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171"><a
+                        href="https://dani.work/blog/category/programming/dart-flutter/">Flutter (Dart)</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <button class="absolute bottom-4 right-4" onclick="toggleMenu()">
+        <div class="fill-white bg-gray-700 flex items-center justify-center w-8 h-8 p-2">
+            <!-- svg times -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path d="M376.6 427.5c11.31 13.58 9.484 33.75-4.094 45.06c-5.984 4.984-13.25 7.422-20.47 7.422c-9.172 0-18.27-3.922-24.59-11.52L192 305.1l-135.4 162.5c-6.328 7.594-15.42 11.52-24.59 11.52c-7.219 0-14.48-2.438-20.47-7.422c-13.58-11.31-15.41-31.48-4.094-45.06l142.9-171.5L7.422 84.5C-3.891 70.92-2.063 50.75 11.52 39.44c13.56-11.34 33.73-9.516 45.06 4.094L192 206l135.4-162.5c11.3-13.58 31.48-15.42 45.06-4.094c13.58 11.31 15.41 31.48 4.094 45.06l-142.9 171.5L376.6 427.5z" />
+            </svg>
+        </div>
+    </button>
+</div>
+<div class="sm:hidden flex items-center justify-between z-50 bg-gray-800 w-full fixed bottom-0 border-t border-gray-600 shadow">
+    <div class="px-5 text-sm text-gray-500">
+        &copy;2022
+    </div>
+    <div class="px-5 py-3 hover:bg-gray-900 cursor-pointer" onclick="toggleMenu()">
+        <div class="icon-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+<nav class="w-full fixed">
+    <div class="container flex justify-between px-5 lg:px-0">
+        <h3 class="brand">
+            Code Insider
+        </h3>
+
+        <div class="nav-menu hidden md:block">
+            <ul>
+                <li class="menu-item"><a href="/">Home</a></li>
+                <li class="menu-item"><a href="./category.html">Programming</a></li>
+                <li id="menu-item-169" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-169">
+                    <a href="https://dani.work/blog/category/programming/">Category</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-172"
+                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-172"><a
+                                href="https://dani.work/blog/category/programming/php/">PHP</a></li>
+                        <li id="menu-item-170"
+                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-170"><a
+                                href="https://dani.work/blog/category/programming/android/">Android</a></li>
+                        <li id="menu-item-171"
+                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171"><a
+                                href="https://dani.work/blog/category/programming/dart-flutter/">Flutter (Dart)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex items-center">
+
+            <div id="darkmode-toggle" >
+                <div class="inline-block sun" style="width: 18px; height: 18px; fill: #FA0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z" />
+                    </svg>
+                </div>
+                <div class="inline-block moon active" style="width: 18px; height: 18px; fill: #FA0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z" />
+                    </svg>
+                </div>
+                <div class="ball"></div>
+            </div>
+            
+        </div>
+    </div>
+</nav>
+<div style="height: 60px">
+
+</div>
+
+<!-- Start Content -->
+
+<main class="container grid grid-cols-3 gap-4 py-5 px-5 lg:px-0 ">
+
+    <content class="col-span-3 md:col-span-2">
+        <div class="mb-3">
+            <h2 class="text-2xl font-bold">
+                Programming
+            </h2>
+            <p class="text-gray-300">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dignissimos saepe debitis obcaecati, id ad quas quo expedita dolor perferendis.
+            </p>
+        </div>
+
+        
+            <article class="border p-5 rounded-lg">
+                <div class="content-header">
+                    <a href="./single.html">
+                        <h3 class="text-xl font-bold">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                        </h3>
+                    </a>
+                    <div class="py-2 date text-gray-700 dark:text-gray-400">
+                        Last update at December 2th, 2022
+                    </div>
+                </div>
+    
+                <p class="text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                </p>
+            </article>
+        
+            <article class="border p-5 rounded-lg">
+                <div class="content-header">
+                    <a href="./single.html">
+                        <h3 class="text-xl font-bold">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                        </h3>
+                    </a>
+                    <div class="py-2 date text-gray-700 dark:text-gray-400">
+                        Last update at December 2th, 2022
+                    </div>
+                </div>
+    
+                <p class="text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                </p>
+            </article>
+        
+            <article class="border p-5 rounded-lg">
+                <div class="content-header">
+                    <a href="./single.html">
+                        <h3 class="text-xl font-bold">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                        </h3>
+                    </a>
+                    <div class="py-2 date text-gray-700 dark:text-gray-400">
+                        Last update at December 2th, 2022
+                    </div>
+                </div>
+    
+                <p class="text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                </p>
+            </article>
+        
+            <article class="border p-5 rounded-lg">
+                <div class="content-header">
+                    <a href="./single.html">
+                        <h3 class="text-xl font-bold">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                        </h3>
+                    </a>
+                    <div class="py-2 date text-gray-700 dark:text-gray-400">
+                        Last update at December 2th, 2022
+                    </div>
+                </div>
+    
+                <p class="text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                </p>
+            </article>
+        
+            <article class="border p-5 rounded-lg">
+                <div class="content-header">
+                    <a href="./single.html">
+                        <h3 class="text-xl font-bold">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                        </h3>
+                    </a>
+                    <div class="py-2 date text-gray-700 dark:text-gray-400">
+                        Last update at December 2th, 2022
+                    </div>
+                </div>
+    
+                <p class="text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                </p>
+            </article>
+        
+            <article class="border p-5 rounded-lg">
+                <div class="content-header">
+                    <a href="./single.html">
+                        <h3 class="text-xl font-bold">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                        </h3>
+                    </a>
+                    <div class="py-2 date text-gray-700 dark:text-gray-400">
+                        Last update at December 2th, 2022
+                    </div>
+                </div>
+    
+                <p class="text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                </p>
+            </article>
+        
+            <article class="border p-5 rounded-lg">
+                <div class="content-header">
+                    <a href="./single.html">
+                        <h3 class="text-xl font-bold">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                        </h3>
+                    </a>
+                    <div class="py-2 date text-gray-700 dark:text-gray-400">
+                        Last update at December 2th, 2022
+                    </div>
+                </div>
+    
+                <p class="text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                </p>
+            </article>
+        
+            <article class="border p-5 rounded-lg">
+                <div class="content-header">
+                    <a href="./single.html">
+                        <h3 class="text-xl font-bold">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                        </h3>
+                    </a>
+                    <div class="py-2 date text-gray-700 dark:text-gray-400">
+                        Last update at December 2th, 2022
+                    </div>
+                </div>
+    
+                <p class="text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                </p>
+            </article>
+        
+            <article class="border p-5 rounded-lg">
+                <div class="content-header">
+                    <a href="./single.html">
+                        <h3 class="text-xl font-bold">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                        </h3>
+                    </a>
+                    <div class="py-2 date text-gray-700 dark:text-gray-400">
+                        Last update at December 2th, 2022
+                    </div>
+                </div>
+    
+                <p class="text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                </p>
+            </article>
+        
+            <article class="border p-5 rounded-lg">
+                <div class="content-header">
+                    <a href="./single.html">
+                        <h3 class="text-xl font-bold">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+                        </h3>
+                    </a>
+                    <div class="py-2 date text-gray-700 dark:text-gray-400">
+                        Last update at December 2th, 2022
+                    </div>
+                </div>
+    
+                <p class="text-justify">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis deleniti et quisquam qui doloribus aliquam placeat sapiente quam repellendus, ratione magni repudiandae, officiis eaque harum exercitationem quis saepe. Corrupti, dicta!
+                </p>
+            </article>
+        
+
+    </content>
+
+    <aside class="col-span-3 md:col-span-1">
+
+    <h2 class="text-2xl font-bold pb-3">
+        Populer
+    </h2>
+
+    <div class="sidebar-widget">
+        <ul class="counter">
+            <li>
+                <a href="./single.html">
+                    Lorem ipsum dolor sit amet consectetur adipisicin
+                </a>
+            </li>
+            <li>
+                <a href="./single.html">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo,
+                </a>
+            </li>
+            <li>
+                <a href="./single.html">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, doloremque.
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- --------------------- -->
+
+    <h2 class="text-2xl font-bold pb-3">
+        Terbaru
+    </h2>
+
+    <div class="sidebar-widget">
+        <ul class="counter">
+            <li>
+                <a href="./single.html">
+                    Lorem ipsum dolor sit amet consectetur adipisicin
+                </a>
+            </li>
+            <li>
+                <a href="./single.html">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo,
+                </a>
+            </li>
+            <li>
+                <a href="./single.html">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, doloremque.
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--  -->
+    <h2 class="text-2xl font-bold pb-3 flex items-center gap-3">
+        <span>Kategori</span>
+    </h2>
+
+    <div class="sidebar-widget category">
+        <ul>
+            <li>
+                <a href="./single.html" class="flex w-full justify-between ">
+                    <span>Programming</span>
+                    <span>2</span>
+                </a>
+            </li>
+            <li>
+                <a href="./single.html" class="flex w-full justify-between ">
+                    <span>Data Scientist</span>
+                    <span>2</span>
+                </a>
+            </li>
+            <li>
+                <a href="./single.html" class="flex w-full justify-between ">
+                    <span>
+                        Cloud Computing
+                    </span>
+                    <span>10</span>
+                </a>
+            </li>
+            <li>
+                <a href="./single.html" class="flex w-full justify-between ">
+                    <span>
+                        Artificial Intelegance
+                    </span>
+                    <span>10</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</aside>
+
+
+</main>
+<!-- End Content -->
+
+    <footer>
+        <div class="grid grid-cols-4 gap-3">
+            <div class="col-span-4 md:col-span-2 mb-5 md:mb-0">
+                <h4>About Site</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit facere veritatis illo optio. Accusamus, reiciendis? Natus libero dolore laborum aliquam.
+                </p>
+            </div>
+
+            <div class="col-span-4 md:col-span-1">
+                <h4>Contact</h4>
+
+                <ul>
+                    <li class="flex gap-3 items-center">
+                        <div>
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div>
+                            <h6>Whatsapp</h6>
+                            <p>+6285717453300</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3 items-center">
+                        <div>
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+                        </div>
+                        <div>
+                            <h6>Email</h6>
+                            <p>me@dani.work</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-span-4 md:col-span-1">
+                <h4>Jasa</h4>
+
+                <ul>
+                    <li class="flex gap-3 items-center">
+                        <div>
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <div>
+                            <h6>Software Development</h6>
+                            <p>Website, Mobile (Android, iOS), Desktop</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3 items-center">
+                        <div>
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon><line x1="12" y1="22" x2="12" y2="15.5"></line><polyline points="22 8.5 12 15.5 2 8.5"></polyline><polyline points="2 15.5 12 8.5 22 15.5"></polyline><line x1="12" y1="2" x2="12" y2="8.5"></line></svg>
+                        </div>
+                        <div>
+                            <h6>Server Installation</h6>
+                            <p></p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3 items-center">
+                        <div>
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                        </div>
+                        <div>
+                            <h6>Code & Server Maintenance</h6>
+                            <p>Bug Fixing, Server Perfomance</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        
+    </div>
+</footer>
+    <div id="credit" style="height: 40px;" class="bg-gray-800 flex justify-between items-center px-3 text-gray-400">
+        <div>
+            &copy;insideofcode.com
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+
+</html>

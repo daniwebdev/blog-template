@@ -1,0 +1,98 @@
+@@include('./_inc/header.html', {
+    title: "Blog"
+})
+<!-- Start Content -->
+<main class="container py-2 relative grid grid-cols-3 gap-3 px-2 lg:px-0">
+
+    <content class="col-span-2">
+        <article class="border p-5 rounded-lg bg-white">
+
+            <div class="breadcrumb text-xs">
+                <ul>
+                    <li>Home</li>
+                    <li>Tutorial</li>
+                    <li>Programming</li>
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, accusantium?</li>
+                </ul>
+            </div>
+    
+            <h1 class="text-2xl md:text-3xl font-bold p-0 m-0">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+            </h1>
+            <div class="py-1 flex gap-3 items-center">
+                <div class="text-md">
+                    <span class="text-gray-600 dark:text-gray-400"> Last update at December 2th, 2022</span> by <a href="/author/">Muhamad Yusup Hamdani</a>
+                </div>
+            </div>
+            
+            <div class="content-body">
+                @@include('./_inc/_sample_post.html')
+            </div>
+        </article>
+    
+        <div class="grid grid-cols-2 gap-4 mt-5">
+            <div class="">
+                <span class="block text-sm text-gray-700 dark:text-gray-400">
+                    Previous
+                </span>
+                <a href="" class="hover:text-pink-600 hover:border-b border-pink-600 border-dashed">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, deserunt.
+                </a>
+            </div>
+            <div class="text-right">
+                <span class="block text-sm text-gray-700 dark:text-gray-400">
+                    Next
+                </span>
+                <a href="" class="hover:text-pink-600 hover:border-b border-pink-600 border-dashed">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, deserunt.
+                </a>
+            </div>
+        </div>
+    
+        <h3 class="mt-5 font-bold text-lg">Related Post</h3>
+        <div class="suggestion-content mt-3">
+            <div class="suggestion-item">
+                <div class="flex">
+                    <div class="image flex" style="background: url(https://source.unsplash.com/random/300×300?coding); background-size: cover">
+    
+                    </div>
+                </div>
+                <h4 class="py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, omnis.
+                </h4>
+            </div>
+            <div class="suggestion-item">
+                <div class="flex">
+                    <div class="image flex" style="background: url(https://source.unsplash.com/random/300×300?programming); background-size: cover">
+    
+                    </div>
+                </div>
+                <h4 class="py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, omnis.
+                </h4>
+            </div>
+            <div class="suggestion-item">
+                <div class="flex">
+                    <div class="image flex" style="background: url(https://source.unsplash.com/random/300×300?trading); background-size: cover">
+    
+                    </div>
+                </div>
+                <h4 class="py-3">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, omnis.
+                </h4>
+            </div>
+        </div>
+    
+    
+        @@include('./_inc/comment_section.html')
+    </content>
+    
+    @@include('./_inc/sidebar.html')
+
+
+</main>
+</div>
+
+<!-- End Content -->
+
+@@include('./_inc/footer.html')

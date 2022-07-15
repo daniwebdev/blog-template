@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="description" content="Elit laboris officia laborum do aliquip minim cillum do velit velit amet incididunt.">
+</head>
+<body class="relative">
+
+<div class="full-menu fixed right-0 left-0 flex items-center justify-center h-full top-0 bottom-0 bg-gray-900" style="z-index: 999999">
+    <ul>
+        <li class="menu-item"><a href="/">Home</a></li>
+        <li class="menu-item"><a href="/programming">Programming</a></li>
+        <li id="menu-item-169"
+            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-169">
+            <a href="https://dani.work/blog/category/programming/">Category</a>
+            <ul class="sub-menu">
+                <li id="menu-item-172" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-172"><a
+                        href="https://dani.work/blog/category/programming/php/">PHP</a></li>
+                <li id="menu-item-170" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-170"><a
+                        href="https://dani.work/blog/category/programming/android/">Android</a></li>
+                <li id="menu-item-171" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171"><a
+                        href="https://dani.work/blog/category/programming/dart-flutter/">Flutter (Dart)</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <button class="absolute bottom-4 right-4" onclick="toggleMenu()">
+        <div class="fill-white bg-gray-700 flex items-center justify-center w-8 h-8 p-2">
+            <!-- svg times -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path d="M376.6 427.5c11.31 13.58 9.484 33.75-4.094 45.06c-5.984 4.984-13.25 7.422-20.47 7.422c-9.172 0-18.27-3.922-24.59-11.52L192 305.1l-135.4 162.5c-6.328 7.594-15.42 11.52-24.59 11.52c-7.219 0-14.48-2.438-20.47-7.422c-13.58-11.31-15.41-31.48-4.094-45.06l142.9-171.5L7.422 84.5C-3.891 70.92-2.063 50.75 11.52 39.44c13.56-11.34 33.73-9.516 45.06 4.094L192 206l135.4-162.5c11.3-13.58 31.48-15.42 45.06-4.094c13.58 11.31 15.41 31.48 4.094 45.06l-142.9 171.5L376.6 427.5z" />
+            </svg>
+        </div>
+    </button>
+</div>
+<div class="sm:hidden flex items-center justify-between z-50 bg-gray-800 w-full fixed bottom-0 border-t border-gray-600 shadow">
+    <div class="px-5 text-sm text-gray-500">
+        &copy;2022
+    </div>
+    <div class="px-5 py-3 hover:bg-gray-900 cursor-pointer" onclick="toggleMenu()">
+        <div class="icon-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                <path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+<nav class="w-full fixed">
+    <div class="container flex justify-between px-5 lg:px-0">
+        <h3 class="brand">
+            Code Insider
+        </h3>
+
+        <div class="nav-menu hidden md:block">
+            <ul>
+                <li class="menu-item"><a href="/">Home</a></li>
+                <li class="menu-item"><a href="./category.html">Programming</a></li>
+                <li id="menu-item-169" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-169">
+                    <a href="https://dani.work/blog/category/programming/">Category</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-172"
+                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-172"><a
+                                href="https://dani.work/blog/category/programming/php/">PHP</a></li>
+                        <li id="menu-item-170"
+                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-170"><a
+                                href="https://dani.work/blog/category/programming/android/">Android</a></li>
+                        <li id="menu-item-171"
+                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-171"><a
+                                href="https://dani.work/blog/category/programming/dart-flutter/">Flutter (Dart)</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="flex items-center">
+
+            <div id="darkmode-toggle" >
+                <div class="inline-block sun" style="width: 18px; height: 18px; fill: #FA0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z" />
+                    </svg>
+                </div>
+                <div class="inline-block moon active" style="width: 18px; height: 18px; fill: #FA0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                        <path d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z" />
+                    </svg>
+                </div>
+                <div class="ball"></div>
+            </div>
+            
+        </div>
+    </div>
+</nav>
+<div style="height: 60px">
+
+</div>
+
+<!-- Start Content -->
+<div class="relative">
+
+<div class="cover absolute" style="background: url(https://images.unsplash.com/photo-1559445368-b8a993676d7a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80) no-repeat center; background-size: cover; width: 100%; height:500px">
+
+</div>
+
+<main class="container py-5 relative px-2 lg:px-0">
+
+    <article class="border p-5  mt-72 rounded-lg bg-white">
+
+        <div class="breadcrumb text-xs">
+            <ul>
+                <li>Home</li>
+                <li>Tutorial</li>
+                <li>Programming</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, accusantium?</li>
+            </ul>
+        </div>
+
+        <h1 class="text-2xl md:text-3xl font-bold p-0 m-0">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, perspiciatis.
+        </h1>
+        <div class="py-1 flex gap-3 items-center">
+            <div class="text-md">
+                <span class="text-gray-600 dark:text-gray-400"> Last update at December 2th, 2022</span> by <a href="/author/">Muhamad Yusup Hamdani</a>
+            </div>
+        </div>
+        
+        <div class="content-body">
+            <h2>Pengantar</h2>
+<p>Saat ini hampir semua bahasa pemrograman yang populer mempunya <em>package manager</em> untuk mengelola library
+    di ruang lingkup bahasa pemrograman itu sendiri.</p>
+<p>Composer merupakan <em>package manager</em> untuk bahasa pemrograman PHP, saat artikel ini ditulis versi terbaru
+    dari composer adalah <a href="https://github.com/composer/composer/tree/2.3.8"><strong>versi</strong>
+        <strong>2.3.8</strong></a> , di artikel ini kita akan membahas <strong>cara install package manager composer
+        terbaru di linux</strong>.</p>
+<h2>Persiapan</h2>
+<ul>
+    <li>Koneksi Internet</li>
+    <li>PHP CLI versi 7 , direkomendasikan menggunakan versi terbaru</li>
+</ul>
+<h2>Cara Install Package Manager Composer</h2>
+<p>Cara ini mungkin bisa dilakukan juga untuk versi yang lebih tinggi dari saat ini, atau mungkin tidak akan jauh
+    berbeda.</p>
+<h3>Membaca dokumentasi resmi</h3>
+<p><strong>Pro tips: </strong>Biasakan jika kita mau mempelajari atau mau mencari tahu mengenai <em>tools</em>,
+    <em>software</em>, bahasa pemrograman, dll. sebelum bertanya kemana-mana sebaiknya terlebih dahulu buka
+    dokumentasi dari official websitenya, biasanya disana sudah ada informasi yang cukup lengkap.
+</p>
+<p>Buka website composer di <a href="https://getcomposer.org/" target="_blank"
+        rel="noreferrer noopener nofollow">https://getcomposer.org</a> lalu masuk ke halaman <a
+        href="https://getcomposer.org/download/" target="_blank"
+        rel="noreferrer noopener nofollow"><em>Download</em></a> , dihalaman tersebut terdapat cara untuk
+    mendapatkan composer di perangkat kita, dan kita akan bahas langkah-langkah tersebut sekarang.</p>
+<h3>Download Installer</h3>
+<p>dibaris pertama kita akan diarahkan untuk men-download installer menggunakan perintah php-cli dengan cara :</p>
+<pre class="wp-block-code language-bash"
+    tabindex="0"><code lang="bash" class="language-bash">$ php -r <span class="token string">"copy('https://getcomposer.org/installer', 'composer-setup.php');"</span></code></pre>
+<p>Ketika perintah tersebut dijalankan maka kita akan mendapatkan satu file bernama ‘composer-setup.php’, file
+    tersebut merupakan installer untuk composer.</p>
+<h3>Memvalidasi File Installer</h3>
+<p>Untuk memastikan bahwa file yang kita <em>download</em> itu tidak bermasalah <em>(corrupt)</em> dan tidak
+    disusupi virus, kita dianjurkan untuk memvalidasinya dengan metode hashing, caranya sebagai berikut :</p>
+<pre class="wp-block-code language-bash"
+    tabindex="0"><code lang="bash" class="language-bash">$ php -r <span class="token string">"if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"</span></code></pre>
+<h3>Mulai Install Composer</h3>
+<p>Selanjutnya jalankan file installer yang sudah di <em>download</em> tadi, dengan menggunakan perintah sebagai
+    berikut:</p>
+<pre class="wp-block-code language-bash"
+    tabindex="0"><code lang="bash" class="language-bash">$ php composer-setup.php</code></pre>
+<p>Tunggu beberapa saat sampai proses instalasi selesai, dan setelah selesai kita akan mendapatkan satu file baru
+    bernama <strong>composer.phar</strong> file tersebut merupakan file yang digunakan untuk menajalankan
+    <em><strong>composer</strong></em>.
+</p>
+<p>untuk memastikan sudah berjalan dengan baik, kita coba cek versi composernya dengan cara :</p>
+<pre class="wp-block-code language-bash"
+    tabindex="0"><code lang="bash" class="language-bash">$ php composer.phar -v</code></pre>
+<p><em>output</em> nya akan menampilkan versi dari composer itu sendiri, dan perintah tersbut hanya bisa dijalankan
+    dimana file <em>composer.phar</em> itu berada.</p>
+<p>Lalu bagaimana jika kita mau menjalankan perintah composer dimana saja tergantung project php kita berada. maka
+    kita perlu memindahkan file composer.phar tadi ke lokasi yang sudah terdaftar di <em>PATH variable, </em> maka
+    kita perlu memindahkan file tersebut ke <em>‘/usr/local/bin’</em> karena lokasi tersebut sudah terdaftar di PATH
+    variable jadi setiap file binary yang ada di dalam folder tersbut bisa kita jalankan di mana saja.</p>
+<p>Untuk memindahkannya lakukan dengan perintah sebagai berikut :</p>
+<pre class="wp-block-code language-bash"
+    tabindex="0"><code lang="bash" class="language-bash">$ <span class="token function">mv</span> composer.phar /usr/local/bin/composer</code></pre>
+<p>Setelah itu harusnya composer sudah bisa dijalankan secara global, dengan perintah :</p>
+<pre class="wp-block-code"><code class="">$ composer
+                    $ composer -v</code></pre>
+<h2>Kesimpulan</h2>
+<p>Composer dapat membantu kita untuk memasang banyak package / library PHP yang ada di <a href="https://packagist.org/"
+        target="_blank" rel="noreferrer noopener nofollow">https://packagist.org/</a>
+    maupun di repository git.</p>
+<p>Sekian dan terimakasih.</p>
+<div class="post-tags">
+    <ul>
+        <li><a href="https://dani.work/blog/tag/laravel/">Laravel</a></li>
+        <li><a href="https://dani.work/blog/tag/pacakge-manager/">pacakge manager</a></li>
+        <li><a href="https://dani.work/blog/tag/php/">php</a></li>
+        <li><a href="https://dani.work/blog/tag/programming/">programming</a></li>
+    </ul>
+</div>
+        </div>
+    </article>
+
+    <div class="grid grid-cols-2 gap-4 mt-5">
+        <div class="">
+            <span class="block text-sm text-gray-700 dark:text-gray-400">
+                Previous
+            </span>
+            <a href="" class="hover:text-pink-600 hover:border-b border-pink-600 border-dashed">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, deserunt.
+            </a>
+        </div>
+        <div class="text-right">
+            <span class="block text-sm text-gray-700 dark:text-gray-400">
+                Next
+            </span>
+            <a href="" class="hover:text-pink-600 hover:border-b border-pink-600 border-dashed">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, deserunt.
+            </a>
+        </div>
+    </div>
+
+    <h3 class="mt-5 font-bold text-lg">Related Post</h3>
+    <div class="suggestion-content mt-3">
+        <div class="suggestion-item">
+            <div class="flex">
+                <div class="image flex" style="background: url(https://source.unsplash.com/random/300×300?coding); background-size: cover">
+
+                </div>
+            </div>
+            <h4 class="py-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, omnis.
+            </h4>
+        </div>
+        <div class="suggestion-item">
+            <div class="flex">
+                <div class="image flex" style="background: url(https://source.unsplash.com/random/300×300?programming); background-size: cover">
+
+                </div>
+            </div>
+            <h4 class="py-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, omnis.
+            </h4>
+        </div>
+        <div class="suggestion-item">
+            <div class="flex">
+                <div class="image flex" style="background: url(https://source.unsplash.com/random/300×300?trading); background-size: cover">
+
+                </div>
+            </div>
+            <h4 class="py-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, omnis.
+            </h4>
+        </div>
+    </div>
+
+
+    <div id="respond" class="comment-respond">
+    <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow"
+                id="cancel-comment-reply-link" href="/blog/download-ubuntu-server-22-04-lts-minimal-virtualbox/#respond"
+                style="display:none;">Cancel reply</a></small></h3>
+    <form action="https://dani.work/blog/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+        <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> <span
+                class="required-field-message" aria-hidden="true">Required fields are marked <span class="required"
+                    aria-hidden="true">*</span></span></p>
+        <p class="comment-form-comment"><label for="comment">Comment <span class="required"
+                    aria-hidden="true">*</span></label> <textarea id="comment" name="comment" cols="45" rows="8"
+                maxlength="65525" required="required"></textarea></p>
+        <p class="comment-form-author"><label for="author">Name</label> <input id="author" name="author" type="text"
+                value="" size="30" maxlength="245" /></p>
+        <p class="comment-form-email"><label for="email">Email</label> <input id="email" name="email" type="text"
+                value="" size="30" maxlength="100" aria-describedby="email-notes" /></p>
+        <p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value=""
+                size="30" maxlength="200" /></p>
+        <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
+                type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website
+                in this browser for the next time I comment.</label></p>
+        <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" />
+            <input type='hidden' name='comment_post_ID' value='582' id='comment_post_ID' />
+            <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+        </p>
+    </form>
+</div>
+    
+
+</main>
+</div>
+
+<!-- End Content -->
+
+    <footer>
+        <div class="grid grid-cols-4 gap-3">
+            <div class="col-span-4 md:col-span-2 mb-5 md:mb-0">
+                <h4>About Site</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit facere veritatis illo optio. Accusamus, reiciendis? Natus libero dolore laborum aliquam.
+                </p>
+            </div>
+
+            <div class="col-span-4 md:col-span-1">
+                <h4>Contact</h4>
+
+                <ul>
+                    <li class="flex gap-3 items-center">
+                        <div>
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <div>
+                            <h6>Whatsapp</h6>
+                            <p>+6285717453300</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3 items-center">
+                        <div>
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><circle cx="12" cy="12" r="4"></circle><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"></path></svg>
+                        </div>
+                        <div>
+                            <h6>Email</h6>
+                            <p>me@dani.work</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-span-4 md:col-span-1">
+                <h4>Jasa</h4>
+
+                <ul>
+                    <li class="flex gap-3 items-center">
+                        <div>
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        </div>
+                        <div>
+                            <h6>Software Development</h6>
+                            <p>Website, Mobile (Android, iOS), Desktop</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3 items-center">
+                        <div>
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon><line x1="12" y1="22" x2="12" y2="15.5"></line><polyline points="22 8.5 12 15.5 2 8.5"></polyline><polyline points="2 15.5 12 8.5 22 15.5"></polyline><line x1="12" y1="2" x2="12" y2="8.5"></line></svg>
+                        </div>
+                        <div>
+                            <h6>Server Installation</h6>
+                            <p></p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3 items-center">
+                        <div>
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                        </div>
+                        <div>
+                            <h6>Code & Server Maintenance</h6>
+                            <p>Bug Fixing, Server Perfomance</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        
+    </div>
+</footer>
+    <div id="credit" style="height: 40px;" class="bg-gray-800 flex justify-between items-center px-3 text-gray-400">
+        <div>
+            &copy;insideofcode.com
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+
+</html>
